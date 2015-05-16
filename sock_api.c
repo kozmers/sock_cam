@@ -48,13 +48,14 @@ void log_conn(struct sockaddr_in addr)
 {
 	/** TODO **/
 	printf("conn from %s\n", inet_ntoa(addr.sin_addr));
-	pthread_exit(NULL);
+	
 }
 
 void *send_data(void *fd)
 {
 	/** TODO **/
 	send(*((int *)fd),"Welcome to my server/n",21,0);
+	pthread_exit(NULL);
 }
 
 int loop_srv(int srv_fd)
@@ -69,6 +70,7 @@ int loop_srv(int srv_fd)
 	{
 		if(-1 == (conn_fd = accept(srv_fd, (struct sockaddr*) &addr, (socklen_t *) &conn_addr_len)))
 		{
+			perror("accept");
 			continue;
 		}
 		log_conn(addr);

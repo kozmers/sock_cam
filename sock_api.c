@@ -110,3 +110,8 @@ int loop_clnt(int clnt_fd)
 	/** TODO **/
 	return 0;
 }
+
+void close_clnt(int fd)
+{
+	close(fd);
+}

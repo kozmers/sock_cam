@@ -23,6 +23,10 @@ int main(int argc, char **argv)
 
 	c_fd = create_clnt("127.0.0.1", PORT);
 	loop_clnt(c_fd);
+	
+	close_srv(s_fd);
+	close_clnt(c_fd);
+	
 
 	return 0;
 }

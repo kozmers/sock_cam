@@ -1,6 +1,7 @@
 # Makefile
 
-FLAGS=-Wall -O2
+CC=gcc
+FLAGS=-Wall -O2 -lpthread
 OBJ= v4l2_api.o \
 	main.o \
 	sock_api.o

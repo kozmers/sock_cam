@@ -6,7 +6,7 @@
 #include <string.h>		/* memset() */
 #include <pthread.h>
 
-#define CLR(x) memset(&x, 0, sizeof(x))
+#define CLR(x) memset(&(x), 0, sizeof(x))
 #define IF_RET(x) if(-1==(x)) return -1
 
 /**
